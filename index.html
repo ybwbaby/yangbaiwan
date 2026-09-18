@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>杨百万B站数据看板</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">杨百万B站数据看板</div>
+    <div class="status">
+      <span class="badge">B站数据</span>
+      <span id="statusText">加载中…</span>
+    </div>
+    <div class="actions">
+      <button id="btnRefresh" class="btn primary">刷新</button>
+    </div>
+  </div>
+
+  <main>
+    <!-- 汇总卡片 -->
+    <section class="cards" id="cards"></section>
+
+    <!-- 明细表格 -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>明细数据</h2>
+        <div class="table-actions">
+          <input id="search" class="search" type="text" placeholder="搜索标题 / BV号（逗号分隔多个）" />
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table id="table">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 折线图 -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>涨幅趋势曲线</h2>
+        <div class="head-tools">
+          <select id="daySelect" class="day-select"></select>
+          <div class="tabs" id="metricTabs"></div>
+        </div>
+      </div>
+      <div id="chart" class="chart"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

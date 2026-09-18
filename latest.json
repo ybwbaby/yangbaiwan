@@ -1,0 +1,679 @@
+{
+  "metrics": [
+    "view",
+    "online",
+    "share",
+    "like",
+    "favorite",
+    "coin",
+    "reply",
+    "danmaku"
+  ],
+  "metricNames": {
+    "online": "在线人数",
+    "view": "播放",
+    "share": "分享",
+    "like": "点赞",
+    "favorite": "收藏",
+    "coin": "投币",
+    "reply": "评论",
+    "danmaku": "弹幕"
+  },
+  "videos": [
+    {
+      "bvid": "BV1GdgW6JEe9",
+      "title": "【杨博文｜4k直拍】Whiplash直拍合集（双日混剪+单日）",
+      "owner": "关键时刻来瓶尖叫",
+      "history": [
+        {
+          "t": 1789702314,
+          "view": 360364,
+          "online": 3,
+          "share": 7168,
+          "like": 30870,
+          "favorite": 23323,
+          "coin": 23644,
+          "reply": 5239,
+          "danmaku": 8735
+        },
+        {
+          "t": 1789705245,
+          "view": 360387,
+          "online": 2,
+          "share": 7168,
+          "like": 30870,
+          "favorite": 23323,
+          "coin": 23644,
+          "reply": 5239,
+          "danmaku": 8735
+        },
+        {
+          "t": 1789705801,
+          "view": 360389,
+          "online": 1,
+          "share": 7168,
+          "like": 30870,
+          "favorite": 23322,
+          "coin": 23644,
+          "reply": 5239,
+          "danmaku": 8735
+        },
+        {
+          "t": 1789707600,
+          "view": 360407,
+          "online": 2,
+          "share": 7168,
+          "like": 30870,
+          "favorite": 23323,
+          "coin": 23644,
+          "reply": 5239,
+          "danmaku": 8735
+        }
+      ]
+    },
+    {
+      "bvid": "BV1E2bR6hEJR",
+      "title": "【杨博文】Attention丨直拍横屏丨16岁高中生内娱主舞的舞台掌控力丨8.16双机位4k精剪",
+      "owner": "Kismet丨杨博文",
+      "history": [
+        {
+          "t": 1789702314,
+          "view": 474521,
+          "online": 50,
+          "share": 6223,
+          "like": 38162,
+          "favorite": 25716,
+          "coin": 17276,
+          "reply": 12623,
+          "danmaku": 14940
+        },
+        {
+          "t": 1789705245,
+          "view": 474762,
+          "online": 48,
+          "share": 6225,
+          "like": 38165,
+          "favorite": 25719,
+          "coin": 17276,
+          "reply": 12623,
+          "danmaku": 14940
+        },
+        {
+          "t": 1789705801,
+          "view": 474803,
+          "online": 50,
+          "share": 6225,
+          "like": 38165,
+          "favorite": 25719,
+          "coin": 17276,
+          "reply": 12623,
+          "danmaku": 14940
+        },
+        {
+          "t": 1789707600,
+          "view": 474977,
+          "online": 53,
+          "share": 6225,
+          "like": 38170,
+          "favorite": 25725,
+          "coin": 17276,
+          "reply": 12623,
+          "danmaku": 14941
+        }
+      ]
+    },
+    {
+      "bvid": "BV1W5gs6KEhr",
+      "title": "【4K精剪】异常加载中 | 杨博文直拍 | 四天混剪 | 第肆象限演唱会",
+      "owner": "underthepoplar",
+      "history": [
+        {
+          "t": 1789702314,
+          "view": 340758,
+          "online": 3,
+          "share": 6422,
+          "like": 26711,
+          "favorite": 19125,
+          "coin": 16884,
+          "reply": 7612,
+          "danmaku": 8931
+        },
+        {
+          "t": 1789705245,
+          "view": 340925,
+          "online": 4,
+          "share": 6424,
+          "like": 26713,
+          "favorite": 19126,
+          "coin": 16884,
+          "reply": 7612,
+          "danmaku": 8931
+        },
+        {
+          "t": 1789705801,
+          "view": 340955,
+          "online": 5,
+          "share": 6424,
+          "like": 26713,
+          "favorite": 19127,
+          "coin": 16884,
+          "reply": 7612,
+          "danmaku": 8931
+        },
+        {
+          "t": 1789707600,
+          "view": 341084,
+          "online": 2,
+          "share": 6424,
+          "like": 26714,
+          "favorite": 19127,
+          "coin": 16884,
+          "reply": 7612,
+          "danmaku": 8931
+        }
+      ]
+    },
+    {
+      "bvid": "BV1xebR6zEkr",
+      "title": "【4K精剪】Attention | 杨博文直拍 | 260816",
+      "owner": "underthepoplar",
+      "history": [
+        {
+          "t": 1789702314,
+          "view": 373067,
+          "online": 1,
+          "share": 3425,
+          "like": 21274,
+          "favorite": 17520,
+          "coin": 12240,
+          "reply": 1981,
+          "danmaku": 3104
+        },
+        {
+          "t": 1789705245,
+          "view": 373229,
+          "online": 5,
+          "share": 3427,
+          "like": 21275,
+          "favorite": 17521,
+          "coin": 12240,
+          "reply": 1981,
+          "danmaku": 3104
+        },
+        {
+          "t": 1789705801,
+          "view": 373259,
+          "online": 2,
+          "share": 3427,
+          "like": 21275,
+          "favorite": 17523,
+          "coin": 12240,
+          "reply": 1981,
+          "danmaku": 3104
+        },
+        {
+          "t": 1789707600,
+          "view": 373403,
+          "online": 3,
+          "share": 3427,
+          "like": 21278,
+          "favorite": 17525,
+          "coin": 12242,
+          "reply": 1981,
+          "danmaku": 3105
+        }
+      ]
+    },
+    {
+      "bvid": "BV1c3gF6wERf",
+      "title": "【杨博文】元气甜度爆表！摇曳4k横屏直拍",
+      "owner": "游园会_杨博文",
+      "history": [
+        {
+          "t": 1789702314,
+          "view": 391466,
+          "online": 2,
+          "share": 889,
+          "like": 8288,
+          "favorite": 5614,
+          "coin": 3231,
+          "reply": 1759,
+          "danmaku": 1234
+        },
+        {
+          "t": 1789705245,
+          "view": 392019,
+          "online": 3,
+          "share": 891,
+          "like": 8289,
+          "favorite": 5614,
+          "coin": 3231,
+          "reply": 1759,
+          "danmaku": 1234
+        },
+        {
+          "t": 1789705801,
+          "view": 392127,
+          "online": 3,
+          "share": 891,
+          "like": 8290,
+          "favorite": 5614,
+          "coin": 3231,
+          "reply": 1759,
+          "danmaku": 1234
+        },
+        {
+          "t": 1789707600,
+          "view": 392466,
+          "online": 6,
+          "share": 892,
+          "like": 8291,
+          "favorite": 5616,
+          "coin": 3231,
+          "reply": 1769,
+          "danmaku": 1235
+        }
+      ]
+    },
+    {
+      "bvid": "BV15egs6pEJp",
+      "title": "杨博文｜Whiplash 2机位精剪 直拍 fancam｜4K60｜260813",
+      "owner": "LOST_杨博文",
+      "history": [
+        {
+          "t": 1789702314,
+          "view": 442524,
+          "online": 3,
+          "share": 896,
+          "like": 9963,
+          "favorite": 7461,
+          "coin": 2672,
+          "reply": 1666,
+          "danmaku": 774
+        },
+        {
+          "t": 1789705245,
+          "view": 443048,
+          "online": 4,
+          "share": 898,
+          "like": 9963,
+          "favorite": 7461,
+          "coin": 2672,
+          "reply": 1666,
+          "danmaku": 774
+        },
+        {
+          "t": 1789705801,
+          "view": 443158,
+          "online": 6,
+          "share": 897,
+          "like": 9964,
+          "favorite": 7462,
+          "coin": 2672,
+          "reply": 1666,
+          "danmaku": 774
+        },
+        {
+          "t": 1789707600,
+          "view": 443513,
+          "online": 6,
+          "share": 897,
+          "like": 9964,
+          "favorite": 7462,
+          "coin": 2672,
+          "reply": 1666,
+          "danmaku": 774
+        }
+      ]
+    },
+    {
+      "bvid": "BV1k9gw6gE4U",
+      "title": "「杨博文｜爱的初体验」是不是我的十六岁 注定要为__流泪",
+      "owner": "Astra_杨博文",
+      "history": [
+        {
+          "t": 1789702314,
+          "view": 143093,
+          "online": 2,
+          "share": 356,
+          "like": 3037,
+          "favorite": 2029,
+          "coin": 1057,
+          "reply": 225,
+          "danmaku": 102
+        },
+        {
+          "t": 1789705245,
+          "view": 143119,
+          "online": 2,
+          "share": 356,
+          "like": 3037,
+          "favorite": 2029,
+          "coin": 1057,
+          "reply": 225,
+          "danmaku": 102
+        },
+        {
+          "t": 1789705801,
+          "view": 143124,
+          "online": 4,
+          "share": 356,
+          "like": 3037,
+          "favorite": 2029,
+          "coin": 1057,
+          "reply": 225,
+          "danmaku": 102
+        },
+        {
+          "t": 1789707600,
+          "view": 143141,
+          "online": 3,
+          "share": 356,
+          "like": 3038,
+          "favorite": 2029,
+          "coin": 1057,
+          "reply": 225,
+          "danmaku": 102
+        }
+      ]
+    },
+    {
+      "bvid": "BV1rqgW6hEvv",
+      "title": "【杨博文｜4k直拍】100Ways 直拍",
+      "owner": "关键时刻来瓶尖叫",
+      "history": [
+        {
+          "t": 1789702314,
+          "view": 180271,
+          "online": 3,
+          "share": 377,
+          "like": 4447,
+          "favorite": 3316,
+          "coin": 2030,
+          "reply": 100,
+          "danmaku": 274
+        },
+        {
+          "t": 1789705245,
+          "view": 180431,
+          "online": 3,
+          "share": 379,
+          "like": 4447,
+          "favorite": 3316,
+          "coin": 2030,
+          "reply": 102,
+          "danmaku": 275
+        },
+        {
+          "t": 1789705801,
+          "view": 180461,
+          "online": 2,
+          "share": 379,
+          "like": 4447,
+          "favorite": 3316,
+          "coin": 2030,
+          "reply": 102,
+          "danmaku": 275
+        },
+        {
+          "t": 1789707600,
+          "view": 180574,
+          "online": 4,
+          "share": 379,
+          "like": 4448,
+          "favorite": 3317,
+          "coin": 2032,
+          "reply": 102,
+          "danmaku": 276
+        }
+      ]
+    },
+    {
+      "bvid": "BV1mX8z6NEzz",
+      "title": "【4K精剪】管他什么音乐 | 杨博文直拍 | 260816",
+      "owner": "underthepoplar",
+      "history": [
+        {
+          "t": 1789702314,
+          "view": 340280,
+          "online": 2,
+          "share": 882,
+          "like": 5757,
+          "favorite": 3470,
+          "coin": 2934,
+          "reply": 2101,
+          "danmaku": 738
+        },
+        {
+          "t": 1789705245,
+          "view": 340822,
+          "online": 5,
+          "share": 884,
+          "like": 5759,
+          "favorite": 3470,
+          "coin": 2934,
+          "reply": 2101,
+          "danmaku": 738
+        },
+        {
+          "t": 1789705801,
+          "view": 340927,
+          "online": 5,
+          "share": 884,
+          "like": 5759,
+          "favorite": 3470,
+          "coin": 2934,
+          "reply": 2101,
+          "danmaku": 738
+        },
+        {
+          "t": 1789707600,
+          "view": 341285,
+          "online": 7,
+          "share": 884,
+          "like": 5762,
+          "favorite": 3472,
+          "coin": 2936,
+          "reply": 2101,
+          "danmaku": 738
+        }
+      ]
+    },
+    {
+      "bvid": "BV1qHbb6QErY",
+      "title": "杨博文｜260816第肆象限attention<4k精剪>",
+      "owner": "61strawberry",
+      "history": [
+        {
+          "t": 1789702314,
+          "view": 136969,
+          "online": 1,
+          "share": 26,
+          "like": 2322,
+          "favorite": 1656,
+          "coin": 763,
+          "reply": 26,
+          "danmaku": 35
+        },
+        {
+          "t": 1789705245,
+          "view": 136988,
+          "online": 1,
+          "share": 26,
+          "like": 2322,
+          "favorite": 1656,
+          "coin": 763,
+          "reply": 26,
+          "danmaku": 35
+        },
+        {
+          "t": 1789705801,
+          "view": 136992,
+          "online": 2,
+          "share": 26,
+          "like": 2322,
+          "favorite": 1656,
+          "coin": 763,
+          "reply": 26,
+          "danmaku": 35
+        },
+        {
+          "t": 1789707600,
+          "view": 137009,
+          "online": 1,
+          "share": 26,
+          "like": 2324,
+          "favorite": 1657,
+          "coin": 763,
+          "reply": 26,
+          "danmaku": 35
+        }
+      ]
+    },
+    {
+      "bvid": "BV1ehgs6sE2K",
+      "title": "【杨博文】Whiplash两日混剪4k横屏直拍｜这就是主舞吗？律动质感拉满的女团舞cover",
+      "owner": "游园会_杨博文",
+      "history": [
+        {
+          "t": 1789702314,
+          "view": 94594,
+          "online": 1,
+          "share": 107,
+          "like": 10067,
+          "favorite": 6688,
+          "coin": 3162,
+          "reply": 109,
+          "danmaku": 507
+        },
+        {
+          "t": 1789705245,
+          "view": 94602,
+          "online": 1,
+          "share": 107,
+          "like": 10067,
+          "favorite": 6688,
+          "coin": 3162,
+          "reply": 109,
+          "danmaku": 507
+        },
+        {
+          "t": 1789705801,
+          "view": 94604,
+          "online": 1,
+          "share": 107,
+          "like": 10067,
+          "favorite": 6688,
+          "coin": 3162,
+          "reply": 109,
+          "danmaku": 507
+        },
+        {
+          "t": 1789707600,
+          "view": 94614,
+          "online": 1,
+          "share": 107,
+          "like": 10067,
+          "favorite": 6688,
+          "coin": 3162,
+          "reply": 109,
+          "danmaku": 507
+        }
+      ]
+    },
+    {
+      "bvid": "BV1r8eV6fE5N",
+      "title": "红色防吞3",
+      "owner": "我要在森林里盖房子",
+      "history": [
+        {
+          "t": 1789702314,
+          "view": 12521,
+          "online": 1,
+          "share": 12,
+          "like": 4,
+          "favorite": 6,
+          "coin": 6,
+          "reply": 0,
+          "danmaku": 0
+        },
+        {
+          "t": 1789705245,
+          "view": 12650,
+          "online": 1,
+          "share": 13,
+          "like": 5,
+          "favorite": 7,
+          "coin": 8,
+          "reply": 0,
+          "danmaku": 0
+        },
+        {
+          "t": 1789705801,
+          "view": 12679,
+          "online": 1,
+          "share": 13,
+          "like": 5,
+          "favorite": 7,
+          "coin": 8,
+          "reply": 0,
+          "danmaku": 0
+        },
+        {
+          "t": 1789707600,
+          "view": 12780,
+          "online": 1,
+          "share": 13,
+          "like": 5,
+          "favorite": 7,
+          "coin": 8,
+          "reply": 0,
+          "danmaku": 0
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "view": 3295253,
+    "viewDelta": 1775,
+    "viewTotal": 4825,
+    "online": 89,
+    "onlineDelta": 7,
+    "onlineTotal": 17,
+    "share": 26798,
+    "shareDelta": 1,
+    "shareTotal": 15,
+    "like": 160931,
+    "likeDelta": 17,
+    "likeTotal": 29,
+    "favorite": 115948,
+    "favoriteDelta": 15,
+    "favoriteTotal": 24,
+    "coin": 85907,
+    "coinDelta": 6,
+    "coinTotal": 8,
+    "reply": 33453,
+    "replyDelta": 10,
+    "replyTotal": 12,
+    "danmaku": 39379,
+    "danmakuDelta": 4,
+    "danmakuTotal": 5
+  },
+  "top": {
+    "interval": {
+      "bvid": "BV1mX8z6NEzz",
+      "title": "【4K精剪】管他什么音乐 | 杨博文直拍 | 260816",
+      "owner": "underthepoplar",
+      "delta": 358
+    },
+    "today": {
+      "bvid": "BV1mX8z6NEzz",
+      "title": "【4K精剪】管他什么音乐 | 杨博文直拍 | 260816",
+      "owner": "underthepoplar",
+      "delta": 1005
+    }
+  },
+  "lastCollect": 1789707600,
+  "collecting": false,
+  "videoCount": 12
+}
