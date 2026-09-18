@@ -115,10 +115,10 @@ td.title-cell{white-space:nowrap}
 .progress-title{font-size:14px;font-weight:600;color:var(--text-light);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .progress-value{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
 .progress-track{
-  height:10px;background:rgba(236,72,153,.10);
-  border-radius:99px;overflow:hidden;
+  height:8px;background:#e6eaf1;
+  border-radius:4px;overflow:hidden;
 }
 .progress-bar{
-  height:100%;background:linear-gradient(90deg,#f472b6,#ec4899);
-  border-radius:99px;transition:width .4s ease;
+  height:100%;background:#ec4899;
+  border-radius:4px;transition:width .4s ease;
 }

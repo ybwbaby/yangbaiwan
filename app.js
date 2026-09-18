@@ -77,6 +77,7 @@ function renderCards() {
     wrap.appendChild(card);
   };
 
+  renderTop('时段涨幅最多', top.interval);
   renderTop('当天涨幅最多', top.today);
 }
 
@@ -173,7 +174,7 @@ function renderTable() {
       cells += `
         <td>
           <div>${fmt(s.cur)}</div>
-          <div class="delta ${deltaClass(s.delta)}">${fmtDelta(s.delta)}</div>
+          ${key === 'view' ? '' : `<div class="delta ${deltaClass(s.delta)}">${fmtDelta(s.delta)}</div>`}
         </td>`;
     }
     tr.innerHTML = cells;
