@@ -7,28 +7,24 @@
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <div class="topbar">
-    <div class="brand">杨百万B站数据看板</div>
-    <div class="status">
-      <span class="badge">B站数据</span>
-      <span id="statusText">加载中…</span>
-    </div>
-    <div class="actions">
+  <main>
+    <!-- 顶部横幅 -->
+    <header class="hero">
+      <h1 class="hero-title">🐰 杨百万B站数据看板</h1>
+      <p class="hero-sub">助力冲刺 100w 目标</p>
+    </header>
+
+    <!-- 状态栏 -->
+    <div class="toolbar">
+      <span id="statusText" class="status-text">加载中…</span>
       <button id="btnRefresh" class="btn primary">刷新</button>
     </div>
-  </div>
 
-  <main>
     <!-- 汇总卡片 -->
     <section class="cards" id="cards"></section>
 
     <!-- 播放进度（目标 100 万） -->
-    <section class="panel">
-      <div class="panel-head">
-        <h2>播放进度（目标 100 万）</h2>
-      </div>
-      <div id="progress" class="progress-list"></div>
-    </section>
+    <section id="progress" class="progress-grid"></section>
 
     <!-- 明细表格 -->
     <section class="panel">
@@ -45,7 +41,6 @@
         </table>
       </div>
     </section>
-
   </main>
 
   <script src="./app.js"></script>

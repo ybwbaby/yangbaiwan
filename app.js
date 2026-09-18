@@ -55,11 +55,28 @@ function updateStatus() {
 
 /* ------------------------------ 汇总卡片 ------------------------------ */
 
+function totalViews(d) {
+  return (d.videos || []).reduce((sum, v) => sum + (Number(videoStat(v, 'view').cur) || 0), 0);
+}
+
 function renderCards() {
   const d = state.data;
   const wrap = $('cards');
   wrap.innerHTML = '';
   const top = d.top || {};
+
+  const statCard = (icon, label, value) => {
+    const card = document.createElement('div');
+    card.className = 'card stat';
+    card.innerHTML = `
+      <div class="label">${icon} ${label}</div>
+      <div class="value">${value}</div>
+    `;
+    wrap.appendChild(card);
+  };
+
+  statCard('🚀', '监控视频总数', `${d.videoCount} 个`);
+  statCard('🔥', '累计总播放量', fmt(totalViews(d)));
 
   const renderTop = (label, item) => {
     const card = document.createElement('div');
@@ -84,6 +101,8 @@ function renderCards() {
 /* ------------------------------ 播放进度 ------------------------------ */
 
 const PROGRESS_TARGET = 1000000;
+const MEDALS = ['🥇', '🥈', '🥉'];
+const AXIS_LABELS = ['0w', '20w', '40w', '60w', '80w', '100w'];
 
 function renderProgress() {
   const d = state.data;
@@ -91,21 +110,56 @@ function renderProgress() {
   if (!wrap) return;
   wrap.innerHTML = '';
 
-  const videos = d.videos || [];
-  for (const v of videos) {
+  const videos = (d.videos || [])
+    .slice()
+    .sort((a, b) => (Number(videoStat(b, 'view').cur) || 0) - (Number(videoStat(a, 'view').cur) || 0));
+
+  videos.forEach((v, i) => {
     const cur = Number(videoStat(v, 'view').cur) || 0;
     const pct = Math.max(0, Math.min(100, (cur / PROGRESS_TARGET) * 100));
-    const item = document.createElement('div');
-    item.className = 'progress-item';
-    item.innerHTML = `
-      <div class="progress-info">
-        <div class="progress-title" title="${escapeHtml(v.title)}">${escapeHtml(truncate(v.title, 20))}</div>
-        <div class="progress-value">${fmt(cur)} / 1,000,000 · ${pct.toFixed(2)}%</div>
+    const pctText = Number(pct.toFixed(2));
+    const markerLeft = Math.min(97, Math.max(3, pct));
+
+    const badge = i < MEDALS.length
+      ? `<span class="medal">${MEDALS[i]}</span>`
+      : `<span class="medal rank">${i + 1}</span>`;
+
+    const seps = Array.from({ length: 9 }, (_, k) =>
+      `<span class="psep" style="left:${(k + 1) * 10}%"></span>`
+    ).join('');
+
+    const card = document.createElement('div');
+    card.className = 'vcard';
+    card.innerHTML = `
+      <div class="vhead">
+        ${badge}
+        <span class="vtitle" title="${escapeHtml(v.title)}">${escapeHtml(v.title)}</span>
       </div>
-      <div class="progress-track"><div class="progress-bar" style="width:${pct.toFixed(2)}%"></div></div>
+      <div class="vmeta">
+        <span class="bvtag">${escapeHtml(v.bvid)}</span>
+        ${v.owner ? `<span class="vowner">UP主：${escapeHtml(v.owner)}</span>` : ''}
+      </div>
+      <div class="vstats">
+        <div class="vstat">
+          <div class="vstat-label">当前播放</div>
+          <div class="vstat-value">${fmt(cur)}</div>
+        </div>
+        <div class="vstat">
+          <div class="vstat-label">冲刺进度</div>
+          <div class="vstat-value">${pctText}%</div>
+        </div>
+      </div>
+      <div class="pbar">
+        <div class="pmarker-row"><span class="pmarker" style="left:${markerLeft}%">🐰</span></div>
+        <div class="ptrack">
+          <div class="pfill" style="width:${pct}%"></div>
+          ${seps}
+        </div>
+        <div class="paxis">${AXIS_LABELS.map((t) => `<span>${t}</span>`).join('')}</div>
+      </div>
     `;
-    wrap.appendChild(item);
-  }
+    wrap.appendChild(card);
+  });
 }
 
 /* ------------------------------ 明细表格 ------------------------------ */
