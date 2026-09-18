@@ -55,28 +55,11 @@ function updateStatus() {
 
 /* ------------------------------ 汇总卡片 ------------------------------ */
 
-function totalViews(d) {
-  return (d.videos || []).reduce((sum, v) => sum + (Number(videoStat(v, 'view').cur) || 0), 0);
-}
-
 function renderCards() {
   const d = state.data;
   const wrap = $('cards');
   wrap.innerHTML = '';
   const top = d.top || {};
-
-  const statCard = (icon, label, value) => {
-    const card = document.createElement('div');
-    card.className = 'card stat';
-    card.innerHTML = `
-      <div class="label">${icon} ${label}</div>
-      <div class="value">${value}</div>
-    `;
-    wrap.appendChild(card);
-  };
-
-  statCard('🚀', '监控视频总数', `${d.videoCount} 个`);
-  statCard('🔥', '累计总播放量', fmt(totalViews(d)));
 
   const renderTop = (label, item) => {
     const card = document.createElement('div');
