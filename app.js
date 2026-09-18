@@ -77,8 +77,34 @@ function renderCards() {
     wrap.appendChild(card);
   };
 
-  renderTop('时段涨幅最多', top.interval);
   renderTop('当天涨幅最多', top.today);
+}
+
+/* ------------------------------ 播放进度 ------------------------------ */
+
+const PROGRESS_TARGET = 1000000;
+
+function renderProgress() {
+  const d = state.data;
+  const wrap = $('progress');
+  if (!wrap) return;
+  wrap.innerHTML = '';
+
+  const videos = d.videos || [];
+  for (const v of videos) {
+    const cur = Number(videoStat(v, 'view').cur) || 0;
+    const pct = Math.max(0, Math.min(100, (cur / PROGRESS_TARGET) * 100));
+    const item = document.createElement('div');
+    item.className = 'progress-item';
+    item.innerHTML = `
+      <div class="progress-info">
+        <div class="progress-title" title="${escapeHtml(v.title)}">${escapeHtml(truncate(v.title, 20))}</div>
+        <div class="progress-value">${fmt(cur)} / 1,000,000 · ${pct.toFixed(2)}%</div>
+      </div>
+      <div class="progress-track"><div class="progress-bar" style="width:${pct.toFixed(2)}%"></div></div>
+    `;
+    wrap.appendChild(item);
+  }
 }
 
 /* ------------------------------ 明细表格 ------------------------------ */
@@ -186,6 +212,7 @@ function truncate(s, n) {
 function render() {
   updateStatus();
   renderCards();
+  renderProgress();
   renderTable();
 }
 

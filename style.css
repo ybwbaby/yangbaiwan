@@ -107,3 +107,18 @@ td.title-cell{white-space:nowrap}
 .title-col,.title-cell{text-align:left !important}
 .bv{color:var(--muted);font-size:12px}
 .delta{font-weight:600;font-size:12.5px}
+
+/* 播放进度 */
+.progress-list{display:flex;flex-direction:column;gap:14px}
+.progress-item{display:flex;flex-direction:column;gap:6px}
+.progress-info{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.progress-title{font-size:14px;font-weight:600;color:var(--text-light);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.progress-value{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.progress-track{
+  height:10px;background:rgba(236,72,153,.10);
+  border-radius:99px;overflow:hidden;
+}
+.progress-bar{
+  height:100%;background:linear-gradient(90deg,#f472b6,#ec4899);
+  border-radius:99px;transition:width .4s ease;
+}
