@@ -47,7 +47,7 @@ function updateStatus() {
   if (!d) return;
   const el = document.getElementById('statusText');
   if (el) el.textContent =
-    `上次采集：${fmtTime(d.lastCollect)} · 共 ${d.videoCount} 个视频 · 每 30 分钟自动采集`;
+    `上次更新：${fmtTime(d.lastCollect)} · 共 ${d.videoCount} 个视频 · 每 30 分钟自动更新`;
 }
 
 /* ------------------------------ 汇总卡片 ------------------------------ */
