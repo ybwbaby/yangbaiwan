@@ -47,7 +47,7 @@ function updateStatus() {
   if (!d) return;
   const el = document.getElementById('statusText');
   if (el) el.textContent =
-    `上次更新：${fmtTime(d.lastCollect)} · 共 ${d.videoCount} 个视频 · 每 30 分钟自动更新`;
+    `上次采集：${fmtTime(d.lastCollect)} · 共 ${d.videoCount} 个视频 · 每 30 分钟自动采集`;
 }
 
 /* ------------------------------ 汇总卡片 ------------------------------ */
@@ -92,7 +92,8 @@ function renderProgress() {
 
   const videos = (d.videos || [])
     .slice()
-    .sort((a, b) => (Number(videoStat(b, 'view').cur) || 0) - (Number(videoStat(a, 'view').cur) || 0));
+    .sort((a, b) => (Number(videoStat(b, 'view').cur) || 0) - (Number(videoStat(a, 'view').cur) || 0))
+    .slice(0, 8);
 
   videos.forEach((v, i) => {
     const cur = Number(videoStat(v, 'view').cur) || 0;
