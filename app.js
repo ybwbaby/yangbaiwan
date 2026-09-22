@@ -109,7 +109,7 @@ function renderProgress() {
     ).join('');
 
     const card = document.createElement('div');
-    card.className = 'vcard';
+    card.className = 'vcard' + (i < 3 ? ' top3' : '');
     card.innerHTML = `
       <div class="vhead">
         ${badge}
