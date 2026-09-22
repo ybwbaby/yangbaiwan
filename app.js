@@ -2,9 +2,6 @@
 
 const state = {
   data: null,
-  keyword: '',
-  sortKey: null,
-  sortDesc: true,
 };
 
 const $ = (id) => document.getElementById(id);
@@ -145,21 +142,6 @@ function renderProgress() {
   });
 }
 
-/* ------------------------------ 明细表格 ------------------------------ */
-
-function filterVideos(d) {
-  const keywords = state.keyword
-    .split(/[,，]/)
-    .map((s) => s.trim().toLowerCase())
-    .filter(Boolean);
-  if (!keywords.length) return d.videos;
-  return d.videos.filter((v) => {
-    const title = v.title.toLowerCase();
-    const bvid = v.bvid.toLowerCase();
-    return keywords.some((k) => title.includes(k) || bvid.includes(k));
-  });
-}
-
 function videoStat(v, key) {
   const h = v.history || [];
   if (!h.length) return { cur: 0, delta: 0, total: 0 };
@@ -167,69 +149,6 @@ function videoStat(v, key) {
   const prev = h.length > 1 ? h[h.length - 2][key] || 0 : 0;
   const base = h[0][key] || 0;
   return { cur, delta: cur - prev, total: cur - base };
-}
-
-function renderTable() {
-  const d = state.data;
-  const thead = document.querySelector('#table thead');
-  const tbody = document.querySelector('#table tbody');
-
-  thead.innerHTML = `
-    <tr>
-      <th class="title-col">标题</th>
-      ${d.metrics
-        .map((k) => {
-          const active = state.sortKey === k;
-          const arrow = active ? (state.sortDesc ? ' ▼' : ' ▲') : '';
-          return `<th class="sortable${active ? ' active' : ''}" data-sort="${k}" title="点击按${d.metricNames[k]}排序">${d.metricNames[k]}${arrow}</th>`;
-        })
-        .join('')}
-    </tr>
-  `;
-
-  const list = filterVideos(d);
-  let visible = list;
-  if (state.sortKey) {
-    const key = state.sortKey;
-    visible = visible.slice().sort((a, b) => {
-      const va = videoStat(a, key).cur;
-      const vb = videoStat(b, key).cur;
-      return state.sortDesc ? vb - va : va - vb;
-    });
-  }
-
-  tbody.innerHTML = '';
-  for (const v of visible) {
-    const tr = document.createElement('tr');
-    let cells = `
-      <td class="title-cell">
-        <div title="${escapeHtml(v.title)}">${escapeHtml(truncate(v.title, 20))}</div>
-        <div class="bv">${v.bvid}${v.owner ? ' · UP主：' + escapeHtml(v.owner) : ''}</div>
-      </td>`;
-    for (const key of d.metrics) {
-      const s = videoStat(v, key);
-      cells += `
-        <td>
-          <div>${fmt(s.cur)}</div>
-          ${key === 'view' ? '' : `<div class="delta ${deltaClass(s.delta)}">${fmtDelta(s.delta)}</div>`}
-        </td>`;
-    }
-    tr.innerHTML = cells;
-    tbody.appendChild(tr);
-  }
-
-  thead.querySelectorAll('th.sortable').forEach((th) => {
-    th.onclick = () => {
-      const k = th.getAttribute('data-sort');
-      if (state.sortKey === k) {
-        state.sortDesc = !state.sortDesc;
-      } else {
-        state.sortKey = k;
-        state.sortDesc = true;
-      }
-      renderTable();
-    };
-  });
 }
 
 function escapeHtml(s) {
@@ -251,18 +170,12 @@ function render() {
   updateStatus();
   renderCards();
   renderProgress();
-  renderTable();
 }
 
 /* ------------------------------ 事件 ------------------------------ */
 
 const refreshBtn = document.getElementById('btnRefresh');
 if (refreshBtn) refreshBtn.onclick = fetchData;
-const searchEl = $('search');
-if (searchEl) searchEl.oninput = (e) => {
-  state.keyword = e.target.value;
-  renderTable();
-};
 
 fetchData();
 setInterval(fetchData, 60000); // 数据 30 分钟采集一次，60 秒轮询即可
