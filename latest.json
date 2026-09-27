@@ -5084,6 +5084,17 @@
           "coin": 23766,
           "reply": 5271,
           "danmaku": 8793
+        },
+        {
+          "t": 1790528402,
+          "view": 367801,
+          "online": 2,
+          "share": 7199,
+          "like": 31338,
+          "favorite": 23538,
+          "coin": 23766,
+          "reply": 5271,
+          "danmaku": 8793
         }
       ]
     },
@@ -10148,6 +10159,17 @@
           "share": 6652,
           "like": 39976,
           "favorite": 26979,
+          "coin": 17945,
+          "reply": 12764,
+          "danmaku": 15420
+        },
+        {
+          "t": 1790528402,
+          "view": 558495,
+          "online": 7,
+          "share": 6653,
+          "like": 39976,
+          "favorite": 26978,
           "coin": 17945,
           "reply": 12764,
           "danmaku": 15420
@@ -15218,6 +15240,17 @@
           "coin": 17132,
           "reply": 7683,
           "danmaku": 8968
+        },
+        {
+          "t": 1790528402,
+          "view": 400803,
+          "online": 9,
+          "share": 6640,
+          "like": 27495,
+          "favorite": 19538,
+          "coin": 17132,
+          "reply": 7683,
+          "danmaku": 8968
         }
       ]
     },
@@ -20283,6 +20316,17 @@
           "like": 22529,
           "favorite": 18579,
           "coin": 12637,
+          "reply": 2058,
+          "danmaku": 3190
+        },
+        {
+          "t": 1790528402,
+          "view": 439495,
+          "online": 7,
+          "share": 3704,
+          "like": 22530,
+          "favorite": 18579,
+          "coin": 12638,
           "reply": 2058,
           "danmaku": 3190
         }
@@ -25352,6 +25396,17 @@
           "coin": 4082,
           "reply": 3196,
           "danmaku": 1661
+        },
+        {
+          "t": 1790528402,
+          "view": 623006,
+          "online": 76,
+          "share": 1368,
+          "like": 9409,
+          "favorite": 6767,
+          "coin": 4089,
+          "reply": 3196,
+          "danmaku": 1661
         }
       ]
     },
@@ -30419,6 +30474,17 @@
           "coin": 3353,
           "reply": 3160,
           "danmaku": 1381
+        },
+        {
+          "t": 1790528402,
+          "view": 669784,
+          "online": 15,
+          "share": 1349,
+          "like": 10771,
+          "favorite": 8344,
+          "coin": 3362,
+          "reply": 3160,
+          "danmaku": 1381
         }
       ]
     },
@@ -35478,6 +35544,17 @@
         },
         {
           "t": 1790526601,
+          "view": 150528,
+          "online": 1,
+          "share": 361,
+          "like": 3208,
+          "favorite": 2140,
+          "coin": 1114,
+          "reply": 228,
+          "danmaku": 103
+        },
+        {
+          "t": 1790528402,
           "view": 150528,
           "online": 1,
           "share": 361,
@@ -40553,6 +40630,17 @@
           "coin": 2227,
           "reply": 1226,
           "danmaku": 865
+        },
+        {
+          "t": 1790528402,
+          "view": 202740,
+          "online": 3,
+          "share": 486,
+          "like": 4738,
+          "favorite": 3523,
+          "coin": 2227,
+          "reply": 1226,
+          "danmaku": 865
         }
       ]
     },
@@ -45620,6 +45708,17 @@
           "coin": 3699,
           "reply": 3441,
           "danmaku": 1334
+        },
+        {
+          "t": 1790528402,
+          "view": 567454,
+          "online": 21,
+          "share": 1334,
+          "like": 7024,
+          "favorite": 4568,
+          "coin": 3708,
+          "reply": 3441,
+          "danmaku": 1334
         }
       ]
     },
@@ -50681,6 +50780,17 @@
           "t": 1790526601,
           "view": 145188,
           "online": 6,
+          "share": 31,
+          "like": 2476,
+          "favorite": 1750,
+          "coin": 807,
+          "reply": 28,
+          "danmaku": 35
+        },
+        {
+          "t": 1790528402,
+          "view": 145232,
+          "online": 8,
           "share": 31,
           "like": 2476,
           "favorite": 1750,
@@ -55754,6 +55864,17 @@
           "coin": 3227,
           "reply": 109,
           "danmaku": 508
+        },
+        {
+          "t": 1790528402,
+          "view": 97800,
+          "online": 1,
+          "share": 110,
+          "like": 10441,
+          "favorite": 6953,
+          "coin": 3227,
+          "reply": 109,
+          "danmaku": 508
         }
       ]
     },
@@ -58049,31 +58170,42 @@
           "coin": 1611,
           "reply": 60,
           "danmaku": 182
+        },
+        {
+          "t": 1790528402,
+          "view": 108212,
+          "online": 11,
+          "share": 139,
+          "like": 7980,
+          "favorite": 5219,
+          "coin": 1611,
+          "reply": 60,
+          "danmaku": 182
         }
       ]
     }
   ],
   "totals": {
-    "view": 4328717,
-    "viewDelta": 2371,
-    "viewTotal": 970118,
-    "online": 147,
-    "onlineDelta": 6,
-    "onlineTotal": 66,
-    "share": 29366,
-    "shareDelta": 6,
-    "shareTotal": 2536,
-    "like": 177371,
-    "likeDelta": 23,
-    "likeTotal": 8725,
-    "favorite": 127884,
-    "favoriteDelta": 36,
-    "favoriteTotal": 6889,
-    "coin": 91600,
-    "coinDelta": 34,
-    "coinTotal": 4186,
+    "view": 4331350,
+    "viewDelta": 2633,
+    "viewTotal": 972751,
+    "online": 161,
+    "onlineDelta": 14,
+    "onlineTotal": 80,
+    "share": 29374,
+    "shareDelta": 8,
+    "shareTotal": 2544,
+    "like": 177386,
+    "likeDelta": 15,
+    "likeTotal": 8740,
+    "favorite": 127897,
+    "favoriteDelta": 13,
+    "favoriteTotal": 6902,
+    "coin": 91626,
+    "coinDelta": 26,
+    "coinTotal": 4212,
     "reply": 39224,
-    "replyDelta": 6,
+    "replyDelta": 0,
     "replyTotal": 5748,
     "danmaku": 42440,
     "danmakuDelta": 0,
@@ -58081,19 +58213,19 @@
   },
   "top": {
     "interval": {
-      "bvid": "BV1mX8z6NEzz",
-      "title": "【4K精剪】管他什么音乐 | 杨博文直拍 | 260816",
-      "owner": "underthepoplar",
-      "delta": 549
+      "bvid": "BV1c3gF6wERf",
+      "title": "【杨博文】元气甜度爆表！摇曳4k横屏直拍",
+      "owner": "游园会_杨博文",
+      "delta": 655
     },
     "today": {
-      "bvid": "BV1mX8z6NEzz",
-      "title": "【4K精剪】管他什么音乐 | 杨博文直拍 | 260816",
-      "owner": "underthepoplar",
-      "delta": 549
+      "bvid": "BV1c3gF6wERf",
+      "title": "【杨博文】元气甜度爆表！摇曳4k横屏直拍",
+      "owner": "游园会_杨博文",
+      "delta": 1200
     }
   },
-  "lastCollect": 1790526601,
+  "lastCollect": 1790528402,
   "collecting": false,
   "videoCount": 12
 }
