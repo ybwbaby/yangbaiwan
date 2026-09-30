@@ -50,6 +50,15 @@ body::before{
 .btn:hover{border-color:rgba(236,110,168,.4);color:var(--accent)}
 .btn.primary{background:#ec6ea8;border-color:#ec6ea8;color:#fff}
 
+.toolbar-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.date-filter{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.date-filter select{
+  background:#fff;color:var(--text);
+  border:1px solid rgba(236,110,168,.18);padding:6px 10px;border-radius:8px;
+  font-size:13px;outline:none;cursor:pointer;
+}
+.date-filter select:hover,.date-filter select:focus{border-color:rgba(236,110,168,.4);color:var(--accent)}
+
 main{padding:0 20px 60px;max-width:1260px;margin:0 auto;position:relative;z-index:1}
 
 /* 汇总卡片 */
@@ -66,6 +75,9 @@ main{padding:0 20px 60px;max-width:1260px;margin:0 auto;position:relative;z-inde
 .card .top-owner{color:var(--muted);font-size:12px;margin-bottom:8px}
 .card .delta{margin-top:8px;font-size:13px;font-variant-numeric:tabular-nums;font-weight:600}
 .up{color:var(--up)}.down{color:var(--down)}.flat{color:var(--muted)}
+.card .value.up{color:var(--up)}
+.card .value.down{color:var(--down)}
+.card .value.flat{color:var(--muted)}
 
 /* 面板 */
 .panel{
@@ -152,6 +164,24 @@ td.title-cell{white-space:nowrap}
 }
 .psep{position:absolute;top:0;bottom:0;width:3px;background:#fff3f9}
 .paxis{display:flex;justify-content:space-between;margin-top:6px;font-size:11px;color:var(--muted)}
+
+/* 每日统计 */
+.day-stats{margin-bottom:24px}
+.day-title{font-size:15px;font-weight:700;color:var(--text-light);margin:0 0 14px}
+.dlist{
+  background:var(--glass);border:1px solid var(--glass-border);
+  border-radius:var(--radius);padding:6px 18px;backdrop-filter:blur(24px);
+}
+.drow{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(236,110,168,.06)}
+.drow:last-child{border-bottom:none}
+.drank{
+  width:24px;height:24px;flex-shrink:0;border-radius:99px;
+  background:rgba(244,114,182,.12);color:var(--accent-strong);
+  font-size:12px;font-weight:700;text-align:center;line-height:24px;
+}
+.dtitle{flex:1;min-width:0;font-size:14px;font-weight:600;color:var(--text-light);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ddelta{font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;flex-shrink:0}
 
 @media (max-width:820px){
   .progress-grid{grid-template-columns:1fr}

@@ -31,10 +31,53 @@ function fmtTime(t) {
   return `${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
 }
 
+/* ------------------------------ 日期工具 ------------------------------ */
+
+function dateKey(t) {
+  const d = new Date((t + 8 * 3600) * 1000);
+  let y = d.getUTCFullYear();
+  let m = d.getUTCMonth();
+  let day = d.getUTCDate();
+  if (d.getUTCHours() === 0 && d.getUTCMinutes() === 0) {
+    const prev = new Date(Date.UTC(y, m, day) - 86400000);
+    y = prev.getUTCFullYear();
+    m = prev.getUTCMonth();
+    day = prev.getUTCDate();
+  }
+  const p = (x) => String(x).padStart(2, '0');
+  return `${y}-${p(m + 1)}-${p(day)}`;
+}
+
+function collectDates(data) {
+  const set = new Set();
+  (data.videos || []).forEach((v) =>
+    (v.history || []).forEach((p) => set.add(dateKey(p.t)))
+  );
+  return Array.from(set).sort();
+}
+
+function dayStats(data, key) {
+  const metrics = data.metrics || [];
+  const rows = [];
+  (data.videos || []).forEach((v) => {
+    const pts = (v.history || []).filter((p) => dateKey(p.t) === key);
+    if (!pts.length) return;
+    const first = pts[0];
+    const last = pts[pts.length - 1];
+    const delta = {};
+    metrics.forEach((m) => { delta[m] = (last[m] || 0) - (first[m] || 0); });
+    rows.push({ bvid: v.bvid, title: v.title, owner: v.owner, delta });
+  });
+  const totals = {};
+  metrics.forEach((m) => { totals[m] = rows.reduce((s, r) => s + (r.delta[m] || 0), 0); });
+  return { metrics, rows, totals };
+}
+
 async function fetchData() {
   try {
     const res = await fetch('./latest.json', { cache: 'no-store' });
     state.data = await res.json();
+    refreshDateFilter();
     render();
   } catch (e) {
     const el = $('statusText');
@@ -165,18 +208,70 @@ function truncate(s, n) {
   return str.length > n ? str.slice(0, n) + '…' : str;
 }
 
+/* ------------------------------ 每日统计 ------------------------------ */
+
+const DAY_SUMMARY_METRICS = ['view', 'like', 'favorite', 'coin', 'danmaku'];
+
+function renderDayStats() {
+  const d = state.data;
+  const wrap = $('dayStats');
+  if (!wrap) return;
+  const sel = $('dateSelect');
+  const key = sel && sel.value;
+  if (!d || !key) { wrap.innerHTML = ''; return; }
+
+  const st = dayStats(d, key);
+  const names = d.metricNames || {};
+  const cards = DAY_SUMMARY_METRICS.map((m) => {
+    const val = st.totals[m] || 0;
+    return `<div class="card">
+      <div class="label">${names[m] || m}增量</div>
+      <div class="value ${deltaClass(val)}">${fmtDelta(val)}</div>
+    </div>`;
+  }).join('');
+
+  const sorted = st.rows.slice().sort((a, b) => (b.delta.view || 0) - (a.delta.view || 0));
+  const list = sorted.map((r, i) => `
+    <div class="drow">
+      <span class="drank">${i + 1}</span>
+      <span class="dtitle" title="${escapeHtml(r.title)}">${escapeHtml(r.title)}</span>
+      <span class="ddelta ${deltaClass(r.delta.view)}">${fmtDelta(r.delta.view)}</span>
+    </div>
+  `).join('');
+
+  wrap.innerHTML = `
+    <h2 class="day-title">${key} 数据统计</h2>
+    <div class="cards">${cards}</div>
+    <div class="dlist">${list}</div>
+  `;
+}
+
+function refreshDateFilter() {
+  const sel = $('dateSelect');
+  if (!sel || !state.data) return;
+  const prev = sel.value;
+  const dates = collectDates(state.data);
+  sel.innerHTML = dates.map((dd) => `<option value="${dd}">${dd}</option>`).join('');
+  if (dates.includes(prev)) sel.value = prev;
+  else if (dates.length) sel.value = dates[dates.length - 1];
+}
+
 /* ------------------------------ 渲染入口 ------------------------------ */
 
 function render() {
   updateStatus();
   renderCards();
   renderProgress();
+  renderDayStats();
 }
 
 /* ------------------------------ 事件 ------------------------------ */
 
 const refreshBtn = document.getElementById('btnRefresh');
 if (refreshBtn) refreshBtn.onclick = fetchData;
+
+const dateSelect = document.getElementById('dateSelect');
+if (dateSelect) dateSelect.onchange = renderDayStats;
 
 fetchData();
 setInterval(fetchData, 60000); // 数据 30 分钟采集一次，60 秒轮询即可
