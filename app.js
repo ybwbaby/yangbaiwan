@@ -84,11 +84,44 @@ function updateStatus() {
 
 /* ------------------------------ 汇总卡片 ------------------------------ */
 
+function computeTopForDate(data, key) {
+  let interval = null;
+  let today = null;
+  (data.videos || []).forEach((v) => {
+    const pts = (v.history || []).filter((p) => dateKey(p.t) === key);
+    if (!pts.length) return;
+    for (let i = 1; i < pts.length; i++) {
+      const delta = (Number(pts[i].view) || 0) - (Number(pts[i - 1].view) || 0);
+      if (!interval || delta > interval.delta) {
+        interval = { bvid: v.bvid, title: v.title, owner: v.owner || '', delta };
+      }
+    }
+    const deltaToday = (Number(pts[pts.length - 1].view) || 0) - (Number(pts[0].view) || 0);
+    if (!today || deltaToday > today.delta) {
+      today = { bvid: v.bvid, title: v.title, owner: v.owner || '', delta: deltaToday };
+    }
+  });
+  return { interval, today };
+}
+
 function renderCards() {
   const d = state.data;
   const wrap = $('cards');
   wrap.innerHTML = '';
-  const top = d.top || {};
+  const key = state.selectedDate;
+  const dates = collectDates(d);
+  const isLatest = !key || key === dates[0];
+
+  let intervalItem, todayItem;
+  if (isLatest) {
+    const top = d.top || {};
+    intervalItem = top.interval;
+    todayItem = top.today;
+  } else {
+    const c = computeTopForDate(d, key);
+    intervalItem = c.interval;
+    todayItem = c.today;
+  }
 
   const renderTop = (label, item) => {
     const card = document.createElement('div');
@@ -106,8 +139,8 @@ function renderCards() {
     wrap.appendChild(card);
   };
 
-  renderTop('时段涨幅最多', top.interval);
-  renderTop('当天涨幅最多', top.today);
+  renderTop('时段涨幅最多', intervalItem);
+  renderTop('当天涨幅最多', todayItem);
 }
 
 /* ------------------------------ 播放进度 ------------------------------ */
@@ -219,7 +252,7 @@ if (refreshBtn) refreshBtn.onclick = fetchData;
 const dateSelect = document.getElementById('dateSelect');
 if (dateSelect) dateSelect.onchange = () => {
   state.selectedDate = dateSelect.value;
-  renderProgress();
+  render();
 };
 
 fetchData();
