@@ -39,7 +39,7 @@ body::before{
 .hero-sub{margin:8px 0 0;font-size:14px;opacity:.95}
 .hidden{display:none !important}
 
-.status-text{font-size:12px;color:rgba(255,255,255,.92);margin:10px 0 0}
+.status-text{font-size:12px;color:rgba(255,255,255,.92);margin:8px 0 0}
 
 .btn{
   background:rgba(236,110,168,.06);color:var(--text);
