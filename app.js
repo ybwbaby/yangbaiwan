@@ -210,8 +210,6 @@ function truncate(s, n) {
 
 /* ------------------------------ 每日统计 ------------------------------ */
 
-const DAY_SUMMARY_METRICS = ['view', 'like', 'favorite', 'coin', 'danmaku'];
-
 function renderDayStats() {
   const d = state.data;
   const wrap = $('dayStats');
@@ -221,17 +219,8 @@ function renderDayStats() {
   if (!d || !key) { wrap.innerHTML = ''; return; }
 
   const st = dayStats(d, key);
-  const names = d.metricNames || {};
-  const cards = DAY_SUMMARY_METRICS.map((m) => {
-    const val = st.totals[m] || 0;
-    return `<div class="card">
-      <div class="label">${names[m] || m}增量</div>
-      <div class="value ${deltaClass(val)}">${fmtDelta(val)}</div>
-    </div>`;
-  }).join('');
-
-  const sorted = st.rows.slice().sort((a, b) => (b.delta.view || 0) - (a.delta.view || 0));
-  const list = sorted.map((r, i) => `
+  const sorted = st.rows.slice().sort((a, b) => (b.delta.view || 0) - (a.delta.view || 0)).slice(0, 8);
+  const rows = sorted.map((r, i) => `
     <div class="drow">
       <span class="drank">${i + 1}</span>
       <span class="dtitle" title="${escapeHtml(r.title)}">${escapeHtml(r.title)}</span>
@@ -241,8 +230,14 @@ function renderDayStats() {
 
   wrap.innerHTML = `
     <h2 class="day-title">${key} 数据统计</h2>
-    <div class="cards">${cards}</div>
-    <div class="dlist">${list}</div>
+    <div class="dlist">
+      <div class="drow dhead">
+        <span class="drank-h">#</span>
+        <span class="dtitle">视频</span>
+        <span class="ddelta">播放增量</span>
+      </div>
+      ${rows}
+    </div>
   `;
 }
 
