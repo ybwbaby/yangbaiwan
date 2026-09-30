@@ -2,6 +2,7 @@
 
 const state = {
   data: null,
+  selectedDate: null,
 };
 
 const $ = (id) => document.getElementById(id);
@@ -53,24 +54,12 @@ function collectDates(data) {
   (data.videos || []).forEach((v) =>
     (v.history || []).forEach((p) => set.add(dateKey(p.t)))
   );
-  return Array.from(set).sort();
+  return Array.from(set).sort().reverse();
 }
 
-function dayStats(data, key) {
-  const metrics = data.metrics || [];
-  const rows = [];
-  (data.videos || []).forEach((v) => {
-    const pts = (v.history || []).filter((p) => dateKey(p.t) === key);
-    if (!pts.length) return;
-    const first = pts[0];
-    const last = pts[pts.length - 1];
-    const delta = {};
-    metrics.forEach((m) => { delta[m] = (last[m] || 0) - (first[m] || 0); });
-    rows.push({ bvid: v.bvid, title: v.title, owner: v.owner, delta });
-  });
-  const totals = {};
-  metrics.forEach((m) => { totals[m] = rows.reduce((s, r) => s + (r.delta[m] || 0), 0); });
-  return { metrics, rows, totals };
+function videoPointAtDate(v, key) {
+  const pts = (v.history || []).filter((p) => dateKey(p.t) === key);
+  return pts.length ? pts[pts.length - 1] : null;
 }
 
 async function fetchData() {
@@ -132,14 +121,16 @@ function renderProgress() {
   const wrap = $('progress');
   if (!wrap) return;
   wrap.innerHTML = '';
+  const key = state.selectedDate;
 
-  const videos = (d.videos || [])
-    .slice()
-    .sort((a, b) => (Number(videoStat(b, 'view').cur) || 0) - (Number(videoStat(a, 'view').cur) || 0))
+  const items = (d.videos || [])
+    .map((v) => ({ v, point: key ? videoPointAtDate(v, key) : null }))
+    .filter((x) => x.point)
+    .sort((a, b) => (Number(b.point.view) || 0) - (Number(a.point.view) || 0))
     .slice(0, 8);
 
-  videos.forEach((v, i) => {
-    const cur = Number(videoStat(v, 'view').cur) || 0;
+  items.forEach(({ v, point }, i) => {
+    const cur = Number(point.view) || 0;
     const pct = Math.max(0, Math.min(100, (cur / PROGRESS_TARGET) * 100));
     const pctText = Number(pct.toFixed(2));
     const markerLeft = Math.min(97, Math.max(3, pct));
@@ -186,15 +177,6 @@ function renderProgress() {
   });
 }
 
-function videoStat(v, key) {
-  const h = v.history || [];
-  if (!h.length) return { cur: 0, delta: 0, total: 0 };
-  const cur = h[h.length - 1][key] || 0;
-  const prev = h.length > 1 ? h[h.length - 2][key] || 0 : 0;
-  const base = h[0][key] || 0;
-  return { cur, delta: cur - prev, total: cur - base };
-}
-
 function escapeHtml(s) {
   return String(s)
     .replace(/&/g, '&amp;')
@@ -208,47 +190,17 @@ function truncate(s, n) {
   return str.length > n ? str.slice(0, n) + '…' : str;
 }
 
-/* ------------------------------ 每日统计 ------------------------------ */
-
-function renderDayStats() {
-  const d = state.data;
-  const wrap = $('dayStats');
-  if (!wrap) return;
-  const sel = $('dateSelect');
-  const key = sel && sel.value;
-  if (!d || !key) { wrap.innerHTML = ''; return; }
-
-  const st = dayStats(d, key);
-  const sorted = st.rows.slice().sort((a, b) => (b.delta.view || 0) - (a.delta.view || 0)).slice(0, 8);
-  const rows = sorted.map((r, i) => `
-    <div class="drow">
-      <span class="drank">${i + 1}</span>
-      <span class="dtitle" title="${escapeHtml(r.title)}">${escapeHtml(r.title)}</span>
-      <span class="ddelta ${deltaClass(r.delta.view)}">${fmtDelta(r.delta.view)}</span>
-    </div>
-  `).join('');
-
-  wrap.innerHTML = `
-    <h2 class="day-title">${key} 数据统计</h2>
-    <div class="dlist">
-      <div class="drow dhead">
-        <span class="drank-h">#</span>
-        <span class="dtitle">视频</span>
-        <span class="ddelta">播放增量</span>
-      </div>
-      ${rows}
-    </div>
-  `;
-}
+/* ------------------------------ 日期筛选 ------------------------------ */
 
 function refreshDateFilter() {
   const sel = $('dateSelect');
   if (!sel || !state.data) return;
-  const prev = sel.value;
+  const prev = state.selectedDate;
   const dates = collectDates(state.data);
   sel.innerHTML = dates.map((dd) => `<option value="${dd}">${dd}</option>`).join('');
-  if (dates.includes(prev)) sel.value = prev;
-  else if (dates.length) sel.value = dates[dates.length - 1];
+  const target = prev && dates.includes(prev) ? prev : (dates[0] || null);
+  sel.value = target || '';
+  state.selectedDate = target;
 }
 
 /* ------------------------------ 渲染入口 ------------------------------ */
@@ -257,7 +209,6 @@ function render() {
   updateStatus();
   renderCards();
   renderProgress();
-  renderDayStats();
 }
 
 /* ------------------------------ 事件 ------------------------------ */
@@ -266,7 +217,10 @@ const refreshBtn = document.getElementById('btnRefresh');
 if (refreshBtn) refreshBtn.onclick = fetchData;
 
 const dateSelect = document.getElementById('dateSelect');
-if (dateSelect) dateSelect.onchange = renderDayStats;
+if (dateSelect) dateSelect.onchange = () => {
+  state.selectedDate = dateSelect.value;
+  renderProgress();
+};
 
 fetchData();
 setInterval(fetchData, 60000); // 数据 30 分钟采集一次，60 秒轮询即可

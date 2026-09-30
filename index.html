@@ -17,20 +17,19 @@
     <!-- 状态栏 -->
     <div class="toolbar">
       <span id="statusText" class="status-text">加载中…</span>
-      <div class="toolbar-right">
-        <label class="date-filter">
-          <span>日期</span>
-          <select id="dateSelect"></select>
-        </label>
-        <button id="btnRefresh" class="btn primary">刷新</button>
-      </div>
+      <button id="btnRefresh" class="btn primary">刷新</button>
+    </div>
+
+    <!-- 日期筛选 -->
+    <div class="date-bar">
+      <label class="date-filter">
+        <span>日期</span>
+        <select id="dateSelect"></select>
+      </label>
     </div>
 
     <!-- 汇总卡片 -->
     <section class="cards" id="cards"></section>
-
-    <!-- 每日统计（按日期筛选） -->
-    <section id="dayStats" class="day-stats"></section>
 
     <!-- 播放进度（目标 100 万） -->
     <section id="progress" class="progress-grid"></section>
