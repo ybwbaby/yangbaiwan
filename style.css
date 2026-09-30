@@ -50,7 +50,7 @@ body::before{
 .btn:hover{border-color:rgba(236,110,168,.4);color:var(--accent)}
 .btn.primary{background:#ec6ea8;border-color:#ec6ea8;color:#fff}
 
-.date-bar{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.date-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
 .date-filter{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
 .date-filter select{
   background:#fff;color:var(--text);
