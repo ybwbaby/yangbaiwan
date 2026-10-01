@@ -6987,6 +6987,17 @@
           "coin": 18131,
           "reply": 12774,
           "danmaku": 15580
+        },
+        {
+          "t": 1790834402,
+          "view": 613398,
+          "online": 13,
+          "share": 6792,
+          "like": 40435,
+          "favorite": 27326,
+          "coin": 18138,
+          "reply": 12774,
+          "danmaku": 15581
         }
       ]
     },
@@ -13955,6 +13966,17 @@
           "like": 22839,
           "favorite": 18885,
           "coin": 12782,
+          "reply": 2071,
+          "danmaku": 3212
+        },
+        {
+          "t": 1790834402,
+          "view": 490120,
+          "online": 6,
+          "share": 3800,
+          "like": 22844,
+          "favorite": 18887,
+          "coin": 12786,
           "reply": 2071,
           "danmaku": 3212
         }
@@ -20927,6 +20949,17 @@
           "coin": 4574,
           "reply": 3802,
           "danmaku": 1877
+        },
+        {
+          "t": 1790834402,
+          "view": 685055,
+          "online": 17,
+          "share": 1549,
+          "like": 9935,
+          "favorite": 7304,
+          "coin": 4584,
+          "reply": 3807,
+          "danmaku": 1879
         }
       ]
     },
@@ -27897,6 +27930,17 @@
           "coin": 3886,
           "reply": 3873,
           "danmaku": 1612
+        },
+        {
+          "t": 1790834402,
+          "view": 730993,
+          "online": 11,
+          "share": 1545,
+          "like": 11252,
+          "favorite": 8874,
+          "coin": 3898,
+          "reply": 3882,
+          "danmaku": 1622
         }
       ]
     },
@@ -34867,6 +34911,17 @@
           "coin": 4212,
           "reply": 4276,
           "danmaku": 1581
+        },
+        {
+          "t": 1790834402,
+          "view": 630165,
+          "online": 12,
+          "share": 1518,
+          "like": 7558,
+          "favorite": 5142,
+          "coin": 4223,
+          "reply": 4276,
+          "danmaku": 1582
         }
       ]
     },
@@ -41837,6 +41892,17 @@
           "coin": 1124,
           "reply": 76,
           "danmaku": 66
+        },
+        {
+          "t": 1790834402,
+          "view": 221596,
+          "online": 16,
+          "share": 130,
+          "like": 2746,
+          "favorite": 2079,
+          "coin": 1130,
+          "reply": 79,
+          "danmaku": 67
         }
       ]
     },
@@ -48807,6 +48873,17 @@
           "coin": 3241,
           "reply": 109,
           "danmaku": 508
+        },
+        {
+          "t": 1790834402,
+          "view": 98907,
+          "online": 5,
+          "share": 110,
+          "like": 10565,
+          "favorite": 7065,
+          "coin": 3241,
+          "reply": 109,
+          "danmaku": 508
         }
       ]
     },
@@ -53005,6 +53082,17 @@
           "coin": 1718,
           "reply": 62,
           "danmaku": 184
+        },
+        {
+          "t": 1790834402,
+          "view": 160509,
+          "online": 16,
+          "share": 220,
+          "like": 8185,
+          "favorite": 5357,
+          "coin": 1720,
+          "reply": 62,
+          "danmaku": 184
         }
       ]
     },
@@ -54068,6 +54156,17 @@
           "coin": 3000,
           "reply": 126,
           "danmaku": 410
+        },
+        {
+          "t": 1790834402,
+          "view": 195863,
+          "online": 19,
+          "share": 1993,
+          "like": 7661,
+          "favorite": 5219,
+          "coin": 3004,
+          "reply": 126,
+          "danmaku": 410
         }
       ]
     },
@@ -55032,51 +55131,62 @@
           "coin": 1485,
           "reply": 114,
           "danmaku": 179
+        },
+        {
+          "t": 1790834402,
+          "view": 190855,
+          "online": 15,
+          "share": 273,
+          "like": 6666,
+          "favorite": 5597,
+          "coin": 1489,
+          "reply": 114,
+          "danmaku": 179
         }
       ]
     }
   ],
   "totals": {
-    "view": 4010575,
-    "viewDelta": 6682,
-    "viewTotal": 1406082,
-    "online": 117,
-    "onlineDelta": -12,
-    "onlineTotal": 22,
-    "share": 17924,
-    "shareDelta": 11,
-    "shareTotal": 3256,
-    "like": 127791,
-    "likeDelta": 63,
-    "likeTotal": 10251,
-    "favorite": 92798,
-    "favoriteDelta": 57,
-    "favoriteTotal": 9168,
-    "coin": 54153,
-    "coinDelta": 15,
-    "coinTotal": 6108,
-    "reply": 27283,
-    "replyDelta": 11,
-    "replyTotal": 6832,
-    "danmaku": 25209,
-    "danmakuDelta": 4,
-    "danmakuTotal": 3137
+    "view": 4017461,
+    "viewDelta": 6886,
+    "viewTotal": 1412968,
+    "online": 130,
+    "onlineDelta": 13,
+    "onlineTotal": 35,
+    "share": 17930,
+    "shareDelta": 6,
+    "shareTotal": 3262,
+    "like": 127847,
+    "likeDelta": 56,
+    "likeTotal": 10307,
+    "favorite": 92850,
+    "favoriteDelta": 52,
+    "favoriteTotal": 9220,
+    "coin": 54213,
+    "coinDelta": 60,
+    "coinTotal": 6168,
+    "reply": 27300,
+    "replyDelta": 17,
+    "replyTotal": 6849,
+    "danmaku": 25224,
+    "danmakuDelta": 15,
+    "danmakuTotal": 3152
   },
   "top": {
     "interval": {
       "bvid": "BV1b68c6fE3M",
       "title": "【杨博文｜4k直拍】好想你好想你好想你好想你～",
       "owner": "关键时刻来瓶尖叫",
-      "delta": 1038
+      "delta": 1082
     },
     "today": {
       "bvid": "BV1b68c6fE3M",
       "title": "【杨博文｜4k直拍】好想你好想你好想你好想你～",
       "owner": "关键时刻来瓶尖叫",
-      "delta": 16861
+      "delta": 17943
     }
   },
-  "lastCollect": 1790832602,
+  "lastCollect": 1790834402,
   "collecting": false,
   "videoCount": 10
 }
